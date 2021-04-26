@@ -47,7 +47,7 @@ classdef BERTLM < transformer.app.eventhandlers.Interface
         end
         
         function [predictions,probabilities] = predict(this,model,tokens)            
-            x = model.Tokenizer.encodeTokens({[model.Tokenizer.SeparatorToken,string(tokens)]});
+            x = model.Tokenizer.encodeTokens({[model.Tokenizer.StartToken,string(tokens),model.Tokenizer.SeparatorToken]});
             x = dlarray(x{1});
             maskIdx = x == model.Tokenizer.MaskCode;
             [~,probabilities] = bert.internal.predictMaskedToken(model,x,maskIdx);
