@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Masked Language Modeling with BERT</title>
+  <link rel="stylesheet" href="index.css">
+  <script async type="text/javascript" src="index.js"></script>
+</head>
+
+<body>
+  <div class="tab-bar">
+    <button id="bert-LM">BERT-LM</button>
+    <button id="finbert-sentiment">FinBERT-Sentiment</button>
+  </div>
+  <div id="bert-LM" class="tab">
+    <div id="flex">
+      <div id="intro">
+        <h1>Masked Token prediction with BERT</h1>
+        <p>Input a string with [MASK] tokens and call predict. For example "The MathWorks develops [MASK] for
+          engineers."</p>
+      </div>
+      <div id="input">
+        <input id="userInput" type="text" value="Input a sentence with a [MASK] token.">
+        <input id="base" type="radio" value="base" name="modelType" class="modelType" checked>
+        <label for="base">Base</label>
+        <input id="multibase" type="radio" value="multilingual-cased" name="modelType" class="modelType">
+        <label for="multibase">Multilingual Cased</label>
+        <input id="medium" type="radio" value="medium" name="modelType" class="modelType">
+        <label for="medium">Medium</label>
+        <input id="small" type="radio" value="small" name="modelType" class="modelType">
+        <label for="small">Small</label>
+        <input id="mini" type="radio" value="mini" name="modelType" class="modelType">
+        <label for="mini">Mini</label>
+        <input id="tiny" type="radio" value="tiny" name="modelType" class="modelType">
+        <label for="tiny">Tiny</label>
+      </div>
+      <div id="button">
+        <button id="predictButton">Predict</button>
+      </div>
+      <div id="output">
+        <div id="tokensOutput">
+          <h2>Tokens</h2>
+          <ul id="tokens">
+          </ul>
+        </div>
+        <div id="predictions">
+          <h2>Most likely sentence</h2>
+          <p id="outputText"></p>
+          <h2>Top 5 predicted tokens</h2>
+          <table class="topKtokens" id="topktable">
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="finbert-sentiment" class="tab">
+    <input id="finbert_input" type="text">
+    <button id="finbert_submit">Predict</button>
+    <p id="finbert_output"></p>
+  </div>
+</body>
+
+</html>

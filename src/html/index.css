@@ -1,0 +1,34 @@
+body{
+  background-color:lightgray;
+}
+
+#flex{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+* {
+  color: rgb(40,40,40);
+}
+
+#userInput{
+  min-width:400px;
+}
+
+#tokens,li{
+  display: inline-block;
+}
+
+li{
+  padding: 1em;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.topKtokens {
+  border: 1px solid black;
+  align-self: center;
+}
