@@ -14,7 +14,7 @@ body{
   color: rgb(40,40,40);
 }
 
-#userInput{
+.userInput{
   min-width:400px;
 }
 
@@ -56,4 +56,16 @@ li{
 
 .tab-bar button.active {
   background-color: #ccc;
+}
+
+#finbert_output.positive {
+  background-color: rgb(62, 255, 62);
+}
+
+#finbert_output.negative {
+  background-color: rgb(255, 80, 80);
+}
+
+#finbert_output.neutral {
+  background-color: rgb(255, 255, 57);
 }

@@ -76,8 +76,12 @@ function setup(htmlComponent) {
         }
         break;
       case "finbert-sentiment":
-        document.getElementById("finbert_output").textContent = htmlComponent.Data["Output"];
-        break
+        outputNode = document.getElementById("finbert_output");
+        sentiment = htmlComponent.Data["Output"];
+        outputNode.textContent = sentiment;
+        outputNode.classList.remove("positive","neutral","negative");
+        outputNode.classList.add(sentiment);
+        break;
     }
 
   });
