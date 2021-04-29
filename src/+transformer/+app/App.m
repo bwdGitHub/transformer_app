@@ -35,7 +35,8 @@ end
 function eventhandlerMap = iDefaultEventHandlers()
 eventhandlers = {
     transformer.app.eventhandlers.BERTLM()
-    transformer.app.eventhandlers.FinBERTSentiment()};
+    transformer.app.eventhandlers.FinBERTSentiment()
+    transformer.app.eventhandlers.GPT2Summarize()};
 
 eventhandlerMap = containers.Map();
 for i = 1:numel(eventhandlers)

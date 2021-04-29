@@ -18,6 +18,11 @@ body{
   min-width:400px;
 }
 
+#gpt2_summary_input{
+  height:400px;
+  max-width:95%;
+}
+
 #tokens,li{
   display: inline-block;
 }

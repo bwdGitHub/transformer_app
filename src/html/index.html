@@ -12,6 +12,7 @@
   <div class="tab-bar">
     <button id="bert-LM">BERT-LM</button>
     <button id="finbert-sentiment">FinBERT-Sentiment</button>
+    <button id="gpt2-summarize">GPT-2 Summarization</button>
   </div>
   <div id="bert-LM" class="tab">
     <div id="flex">
@@ -64,6 +65,19 @@
       <button id="finbert_submit">Predict</button>
       <div id="output">
         <p id="finbert_output"></p>        
+      </div>
+    </div>
+  </div>
+  <div id="gpt2-summarize" class="tab">
+    <div id="flex">
+      <div id="intro">
+        <h1>Generate summaries with GPT-2</h1>
+        <p>Input a document string to summarize.</p>
+      </div>
+      <textarea id="gpt2_summary_input" class="userInput" type="text"></textarea>
+      <button id="gpt2_summary_submit">Summarize</button>
+      <div id="output">
+        <p id="gpt2_summary_output"></p>
       </div>
     </div>
   </div>

@@ -38,6 +38,11 @@ function setup(htmlComponent) {
     htmlComponent.Data = data;
   });
 
+  document.getElementById("gpt2_summary_submit").addEventListener("click", function (e) {
+    data = {"Input":document.getElementById("gpt2_summary_input").value, "Task":"gpt2-summarize"};
+    htmlComponent.Data = data;
+  })
+
   // Listen for changes from MATLAB
   htmlComponent.addEventListener("DataChanged", function (e) {
     switch (htmlComponent.Data["Task"]) {
@@ -82,8 +87,11 @@ function setup(htmlComponent) {
         outputNode.classList.remove("positive","neutral","negative");
         outputNode.classList.add(sentiment);
         break;
+      case "gpt2-summarize":
+        outputNode = document.getElementById("gpt2_summary_output");
+        summary = htmlComponent.Data["Output"];
+        outputNode.textContent = summary;
     }
-
   });
 }
 
