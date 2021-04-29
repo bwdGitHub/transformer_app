@@ -3,6 +3,10 @@ classdef App
         EventHandlers
     end
     
+    properties(SetAccess=private)
+        UIHandle
+    end
+    
     methods
         function this = App(nvp)
             arguments
@@ -11,11 +15,11 @@ classdef App
             end
             screenSz = get(0,'ScreenSize');
             width = 800;
-            height = 400;
+            height = 800;
             app = uifigure('Position',createCenterPosition(screenSz(3),screenSz(4),width,height),'Visible',false,'Name','Transformers App');            
             app.Visible = true;
             this.EventHandlers = nvp.EventHandlers;
-            uihtml(app,'HTMLSource',nvp.SourceFile,'DataChangedFcn',@(src,event) this.callModel(src,event),'Position',[0,0,width,height]);
+            this.UIHandle = uihtml(app,'HTMLSource',nvp.SourceFile,'DataChangedFcn',@(src,event) this.callModel(src,event),'Position',[0,0,width,height]);
         end
     end
     

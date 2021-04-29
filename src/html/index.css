@@ -14,7 +14,7 @@ body{
   color: rgb(40,40,40);
 }
 
-#userInput{
+.userInput{
   min-width:400px;
 }
 
@@ -31,4 +31,41 @@ li{
 .topKtokens {
   border: 1px solid black;
   align-self: center;
+}
+
+.tab-bar {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  display:flex;
+}
+
+.tab-bar button {
+  background-color: inherit;
+  float: center;
+  border: none;
+  padding: 14px 16px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab-bar button:hover {
+  background-color: #ddd;
+}
+
+.tab-bar button.active {
+  background-color: #ccc;
+}
+
+#finbert_output.positive {
+  background-color: rgb(62, 255, 62);
+}
+
+#finbert_output.negative {
+  background-color: rgb(255, 80, 80);
+}
+
+#finbert_output.neutral {
+  background-color: rgb(255, 255, 57);
 }

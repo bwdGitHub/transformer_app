@@ -5,6 +5,13 @@ function hideTabContent() {
   }
 }
 
+function inactivateButtons(){
+  buttons = document.querySelectorAll(".tab-bar button");
+  for (let button of buttons){
+    button.classList.remove("active");
+  }
+}
+
 function setupTabs() {
   hideTabContent();
   let tabButtons = document.querySelectorAll(".tab-bar>button");
@@ -13,6 +20,8 @@ function setupTabs() {
       hideTabContent();
       let thisTabContent = document.querySelector("#" + button.id + ".tab");
       thisTabContent.style.display = "block";
+      inactivateButtons();
+      e.currentTarget.classList.add("active");
     })
   }
 }
@@ -67,8 +76,12 @@ function setup(htmlComponent) {
         }
         break;
       case "finbert-sentiment":
-        document.getElementById("finbert_output").textContent = htmlComponent.Data["Output"];
-        break
+        outputNode = document.getElementById("finbert_output");
+        sentiment = htmlComponent.Data["Output"];
+        outputNode.textContent = sentiment;
+        outputNode.classList.remove("positive","neutral","negative");
+        outputNode.classList.add(sentiment);
+        break;
     }
 
   });

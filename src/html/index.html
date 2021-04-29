@@ -17,10 +17,11 @@
     <div id="flex">
       <div id="intro">
         <h1>Masked Token prediction with BERT</h1>
-        <p>Input a string with [MASK] tokens and call predict. For example "The [MASK] programming language is [MASK]."</p>
+        <p>Input a string with [MASK] tokens and call predict. For example "The [MASK] programming language is [MASK]."
+        </p>
       </div>
       <div id="input">
-        <input id="userInput" type="text" value="Input a sentence with a [MASK] token.">
+        <input id="userInput" class="userInput" type="text" value="Input a sentence with a [MASK] token.">
         <input id="base" type="radio" value="base" name="modelType" class="modelType" checked>
         <label for="base">Base</label>
         <input id="multibase" type="radio" value="multilingual-cased" name="modelType" class="modelType">
@@ -54,9 +55,17 @@
     </div>
   </div>
   <div id="finbert-sentiment" class="tab">
-    <input id="finbert_input" type="text">
-    <button id="finbert_submit">Predict</button>
-    <p id="finbert_output"></p>
+    <div id="flex">
+      <div id="intro">
+        <h1>Financial Sentiment Classification with FinBERT</h1>
+        <p>Input a sentence and press "Predict" to see the financial sentiment model FinBERT.</p>
+      </div>
+      <input id="finbert_input" class="userInput" type="text">
+      <button id="finbert_submit">Predict</button>
+      <div id="output">
+        <p id="finbert_output"></p>        
+      </div>
+    </div>
   </div>
 </body>
 
